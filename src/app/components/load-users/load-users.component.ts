@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { UserModel } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-load-users',
@@ -36,5 +37,24 @@ export class LoadUsersComponent implements OnInit {
     this.pageIndex = event.pageIndex;
     this.loadUsers();
   }
-  constructor(private userService: UserService) {}
+
+  onBtnEdit(id: number): void {
+    this.router.navigate(['/users/edit/' + id]);
+  }
+
+  onBtnDelete(id: number): void {
+    if (window.confirm('Are you sure want to delete?')) {
+      {
+        this.userService.delete(id).subscribe({
+          next: (resp) => {
+            if (this.dataSource.data.length === 1 && this.pageIndex > 0) {
+              this.pageIndex--;
+            }
+            this.loadUsers();
+          },
+        });
+      }
+    }
+  }
+  constructor(private userService: UserService, private router: Router) {}
 }
