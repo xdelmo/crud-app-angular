@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 
+## API Json server
+
+Run `nmp api` for a dev Json server. Navigate to `http://localhost:3000/`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -26,6 +30,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-https://www.youtube.com/watch?v=UKC_ME6B73E
-https://github.com/typicode/json-server
-https://material.angular.io/
+## Resources
+
+- [YouTube](https://www.youtube.com/watch?v=UKC_ME6B73E)
+- [Material Angular](https://material.angular.io/)
+- [Json Server](https://github.com/typicode/json-server)
